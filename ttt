@@ -1,0 +1,23 @@
+CREATE TABLE Company(
+Id SERIAL PRIMARY KEY, 
+Title VARCHAR(150),   
+CEO VARCHAR(150), 
+Capital double PRECISION
+);
+
+CREATE TABLE Phone(
+Id SERIAL PRIMARY KEY, 
+Title VARCHAR(150),   
+CompanyId INTEGER REFERENCES Company (Id), 
+Price numeric(15, 2)
+);
+INSERT INTO company (title, ceo, capital) VALUES
+('Fudzi', 'Bukin', 14135.21),
+('Kodzi', 'Gosparov', 10000.00),
+('malba', 'Karpov', 58.53),
+('Lamba', 'Flemov', 10.99);
+INSERT INTO phone (title, companyid, price) VALUES
+('FudziPhone', 1, 35.21),
+('KodziPhone', 2, 19.00),
+('malbaPhone', 3, 8.93),
+('LambaPhone', 4, 16.99);
